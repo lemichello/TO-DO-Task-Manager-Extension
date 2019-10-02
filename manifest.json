@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "TO-DO Task Manager",
+  "description": "Extension for the 'TO-DO Task Manager' application",
+  "version": "1.0.0",
+  "icons": {
+    "128": "todo-128.png"
+  },
+  "browser_action": {
+    "default_icon": "todo-19.png",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "cookies",
+    "*://*.google.com"
+  ]
+}

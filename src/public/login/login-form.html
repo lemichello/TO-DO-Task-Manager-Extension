@@ -1,0 +1,22 @@
+<div id="login-container" layout="column" layout-align="start center" layout-fill="layout-fill">
+    <form id="login-form" name="loginForm">
+        <md-content layout="column" class="md-padding">
+            <md-input-container class="input-container">
+                <label>Username</label>
+                <input required type="text" ng-model="$ctrl.user.login" name="login">
+                <div ng-messages="loginForm.login.$error">
+                    <div ng-message="required">Username is required</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="input-container">
+                <label>Password</label>
+                <input required type="text" ng-model="$ctrl.user.password" name="password">
+                <div ng-messages="loginForm.password.$error">
+                    <div ng-message="required">Password is required</div>
+                </div>
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-disabled="loginForm.$invalid"
+                       layout-align="start center" ng-click="$ctrl.login()">Login</md-button>
+        </md-content>
+    </form>
+</div>
