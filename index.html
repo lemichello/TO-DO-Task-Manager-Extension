@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body ng-app="extension" ng-cloak>
-
+<loading class="loading-indicator"></loading>
 <ui-view></ui-view>
 
 <!--AngularJS-->
@@ -26,6 +26,8 @@
 
 <!--Extension Module-->
 <script src="src/extension-module.js"></script>
+<script src="src/loading/loading-interceptor.js"></script>
+<script src="src/loading/loading-component.js"></script>
 <script src="src/extension-routes.js"></script>
 <script src="src/login/login-controller.js"></script>
 <script src="src/login/login-form-controller.js"></script>
