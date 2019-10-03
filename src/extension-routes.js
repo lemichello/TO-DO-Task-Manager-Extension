@@ -17,7 +17,14 @@
                 controllerAs: 'ctrl'
             })
             .state('main', {
-                templateUrl: 'src/main/main.html'
+                templateUrl: 'src/main/main.html',
+                controller: 'MainController',
+                controllerAs: 'ctrl',
+                resolve: {
+                    sharedProjects: ['ProjectsService', function (ProjectsService) {
+                        return ProjectsService.getSharedProjects();
+                    }]
+                }
             });
     }
 })();

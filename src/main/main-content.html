@@ -1,0 +1,15 @@
+<div layout="column" layout-fill>
+    <div class="container" layout="row" flex>
+        <md-sidenav id="projects-sidenav" md-is-locked-open="true" class="md-whiteframe-4dp">
+            <md-list>
+                <md-list-item class="project-item" ng-click="null" ng-repeat="project in $ctrl.projects">
+                    <img ng-src="/images/{{project.icon}}" width="32" height="32" alt="{{project.name}}">
+                    <span>{{project.name}}</span>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <md-content flex>
+            <md-button>Click me</md-button>
+        </md-content>
+    </div>
+</div>
