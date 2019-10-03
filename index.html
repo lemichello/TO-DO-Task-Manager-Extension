@@ -7,6 +7,7 @@
     <title>TO-DO Task Manager</title>
     <link rel="stylesheet" href="lib/angular-material.min.css">
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body ng-app="extension" ng-cloak>
 
@@ -15,6 +16,7 @@
 <!--AngularJS-->
 <script src="lib/angular.min.js"></script>
 <script src="lib/angular-ui-router.min.js"></script>
+<script src="lib/angular-cookies.min.js"></script>
 <script src="lib/angular-animate.min.js"></script>
 <script src="lib/angular-aria.min.js"></script>
 <script src="lib/angular-messages.min.js"></script>
@@ -23,14 +25,12 @@
 <script src="lib/angular-material.min.js"></script>
 
 <!--Extension Module-->
-<script src="src/extension.module.js"></script>
-
-<!--Public Module-->
-<script src="src/public/public.module.js"></script>
-<script src="src/public/public.routes.js"></script>
-<script src="src/public/login/login-form.controller.js"></script>
-<script src="src/public/login/login-form.component.js"></script>
-<script src="src/public/login/login-data.service.js"></script>
+<script src="src/extension-module.js"></script>
+<script src="src/extension-routes.js"></script>
+<script src="src/login/login-controller.js"></script>
+<script src="src/login/login-form-controller.js"></script>
+<script src="src/login/login-form-component.js"></script>
+<script src="src/login/login-data-service.js"></script>
 
 </body>
 </html>

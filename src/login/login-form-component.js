@@ -1,9 +1,9 @@
 (function () {
     "use strict";
 
-    angular.module('public')
+    angular.module('extension')
         .component('loginForm', {
-            templateUrl: 'src/public/login/login-form.html',
+            templateUrl: 'src/login/login-form.html',
             controller: 'LoginFormController'
         });
 })();
