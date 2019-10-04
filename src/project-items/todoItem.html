@@ -1,7 +1,13 @@
 <div class="todo-item">
     <md-checkbox class="todo-item-checkbox md-primary" aria-label="Check task"></md-checkbox>
     <div class="item-content">
-        <span ng-class="{'item-header': true, 'header-without-notes': $ctrl.isWithoutNotes}">{{$ctrl.item.header}}</span>
-        <span class="item-notes">{{$ctrl.item.notes}}</span>
+        <span ng-class="{'item-header': true}">{{$ctrl.item.header}}</span>
+        <span class="item-notes" ng-if="$ctrl.item.notes !== ''">{{$ctrl.item.notes}}</span>
+    </div>
+    <div class="item-additional">
+        <p class="project-name" ng-if="$ctrl.item.projectId !== null">{{$ctrl.item.projectName}}</p>
+        <strong ng-class="{'item-deadline': true, 'red-deadline': $ctrl.deadlineStr === 'today'}">
+            {{$ctrl.deadlineStr}}
+        </strong>
     </div>
 </div>

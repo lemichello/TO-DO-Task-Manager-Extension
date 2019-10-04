@@ -24,7 +24,8 @@
 }
 
 .logout-button {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #projects-sidenav {
@@ -62,16 +63,37 @@
 }
 
 .item-header {
-    font-size: 17px;
-    height: 28px;
-}
-
-.header-without-notes {
-    padding-top: 10px;
+    font-size: 15px;
+    height: 30px;
+    overflow: hidden;
 }
 
 .item-notes {
     font-size: 13px;
     color: silver;
     height: 28px;
+    overflow: hidden;
+}
+
+.project-name {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: #2295F2;
+    font-size: 15px;
+}
+
+.item-deadline {
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: gray;
+}
+
+.red-deadline {
+    color: red;
+}
+
+.item-additional {
+    display: flex;
+    align-items: center;
 }

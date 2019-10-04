@@ -10,7 +10,9 @@
             </md-list>
         </md-sidenav>
         <md-content flex>
-            <md-button class="logout-button md-raised md-warn" ng-click="$ctrl.logOut()">Log out</md-button>
+            <div class="logout-button">
+                <md-button class="md-raised md-warn" ng-click="$ctrl.logOut()">Log out</md-button>
+            </div>
             <ui-view></ui-view>
         </md-content>
     </div>
