@@ -31,3 +31,33 @@
     font-size: 1.2em;
     padding-left: 10px;
 }
+
+.todo-item {
+    display: flex;
+}
+
+.todo-item-checkbox {
+    padding-left: 5px;
+    margin: 5px 0 0 0;
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-header {
+    font-size: 17px;
+    height: 28px;
+}
+
+.header-without-notes {
+    padding-top: 10px;
+}
+
+.item-notes {
+    font-size: 13px;
+    color: silver;
+    height: 28px;
+}

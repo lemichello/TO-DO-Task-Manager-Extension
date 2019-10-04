@@ -1,0 +1,7 @@
+<div class="todo-item">
+    <md-checkbox class="todo-item-checkbox md-primary" aria-label="Check task"></md-checkbox>
+    <div class="item-content">
+        <span ng-class="{'item-header': true, 'header-without-notes': $ctrl.isWithoutNotes}">{{$ctrl.item.header}}</span>
+        <span class="item-notes">{{$ctrl.item.notes}}</span>
+    </div>
+</div>

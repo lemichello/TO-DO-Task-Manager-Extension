@@ -17,12 +17,24 @@
                 controllerAs: 'ctrl'
             })
             .state('main', {
+                url: '/main',
                 templateUrl: 'src/main/main.html',
                 controller: 'MainController',
                 controllerAs: 'ctrl',
                 resolve: {
                     sharedProjects: ['ProjectsService', function (ProjectsService) {
                         return ProjectsService.getSharedProjects();
+                    }]
+                }
+            })
+            .state('main.projectItems', {
+                url: '/main/project-items/{project:json}',
+                templateUrl: 'src/project-items/project-items.html',
+                controller: 'ProjectItemsController',
+                controllerAs: 'ctrl',
+                resolve: {
+                    projectItems: ['$stateParams', 'ProjectsService', function ($stateParams, ProjectsService) {
+                        return ProjectsService.getItemsForProject($stateParams.project);
                     }]
                 }
             });
