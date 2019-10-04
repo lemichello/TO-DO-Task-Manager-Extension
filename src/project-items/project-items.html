@@ -1,4 +1,8 @@
 <div layout="column" layout-fill>
+    <div class="project-header" layout="row">
+        <img src="/images/{{ctrl.project.icon}}" width="32" height="32" alt="{{ctrl.project.name}} icon">
+        <h1 class="project-title">{{ctrl.project.name}}</h1>
+    </div>
     <md-list>
         <md-list-item ng-repeat="todoItem in ctrl.items" ng-click="null">
             <todo-item item="todoItem"></todo-item>
