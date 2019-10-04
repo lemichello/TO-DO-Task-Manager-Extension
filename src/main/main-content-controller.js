@@ -4,7 +4,9 @@
     angular.module('extension')
         .controller('MainContentController', MainContentController);
 
-    function MainContentController() {
+    MainContentController.$inject = ['LoginDataService', '$state'];
+
+    function MainContentController(LoginDataService, $state) {
         let ctrl = this;
 
         ctrl.projects = [{
@@ -20,5 +22,10 @@
             name: 'Logbook',
             icon: 'logbook.png'
         }];
+
+        ctrl.logOut = function () {
+            LoginDataService.logOut();
+            $state.go('login');
+        };
     }
 })();

@@ -21,9 +21,9 @@
                 }
 
                 return response.data;
-            }).catch(function () {
+            }).catch(function (response) {
                 alert('Something went wrong on the server');
-
+                response.reject();
             });
         };
 

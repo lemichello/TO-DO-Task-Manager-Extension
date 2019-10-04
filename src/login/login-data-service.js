@@ -37,6 +37,10 @@
             let cookie = $cookies.get('taskManagerUserId');
 
             return cookie !== undefined;
+        };
+
+        service.logOut = function () {
+            $cookies.remove('taskManagerUserId');
         }
     }
 })();

@@ -23,6 +23,10 @@
     margin-bottom: 8px;
 }
 
+.logout-button {
+    float: right;
+}
+
 #projects-sidenav {
     width: 220px;
 }
