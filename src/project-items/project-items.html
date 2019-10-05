@@ -5,7 +5,7 @@
     </div>
     <md-list>
         <md-list-item ng-repeat="todoItem in ctrl.items" ng-click="null">
-            <todo-item item="todoItem"></todo-item>
+            <todo-item item="todoItem" project-name="ctrl.project.name" on-remove="ctrl.removeItem(item)"></todo-item>
         </md-list-item>
     </md-list>
 </div>

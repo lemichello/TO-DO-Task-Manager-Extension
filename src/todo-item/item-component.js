@@ -3,10 +3,12 @@
 
     angular.module('extension')
         .component('todoItem', {
-            templateUrl: 'src/project-items/todoItem.html',
+            templateUrl: 'src/todo-item/todoItem.html',
             controller: 'TodoItemController',
             bindings: {
-                item: '<'
+                item: '<',
+                projectName: '<',
+                onRemove: '&'
             }
         });
 })();
