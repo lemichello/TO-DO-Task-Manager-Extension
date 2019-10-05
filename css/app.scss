@@ -1,0 +1,20 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: $extension-width;
+  height: $extension-height;
+  min-height: $extension-height;
+}
+
+@import "../src/loading/loading";
+@import "../src/login/login-state";
+@import "../src/login/login-form";
+@import "../src/main/main-content";
+@import "../src/project-items/project";
+@import "../src/todo-item/todo-item";

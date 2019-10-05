@@ -1,0 +1,15 @@
+.projects-sidenav {
+  width: 220px;
+
+  &__project-item span {
+    font-size: 1.2em;
+    padding-left: 10px;
+  }
+}
+
+.tasks-container {
+  &__logout-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

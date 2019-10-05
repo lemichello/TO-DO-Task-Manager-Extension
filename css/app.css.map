@@ -1,0 +1,17 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "app.scss",
+    "_variables.scss",
+    "../src/loading/_loading.scss",
+    "../src/login/_login-state.scss",
+    "../src/login/_login-form.scss",
+    "../src/main/_main-content.scss",
+    "../src/project-items/_project.scss",
+    "../src/todo-item/_todo-item.scss"
+  ],
+  "names": [],
+  "mappings": "AAEA;EACE;;;AAGF;EACE;EACA;EACA,OCRgB;EDShB,QCViB;EDWjB,YCXiB;;;ACAnB;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACRF;EACE;EACA;EACA;EACA;;AAEA;EACE;;AAEA;EACE;EACA;;;AAKN;EACE;EACA;;;AClBF;EACE;;;ACDF;EACE;;AAEA;EACE;EACA;;;AAKF;EACE;EACA;;;ACXF;EACE;EACA;EACA;;AAEA;EACE;;;ACFN;EACE;;AAEA;EACE;EACA;;AAGF;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAGF;EACE;EACA,OAzBQ;EA0BR;EACA;;AAIJ;EACE;EACA;EACA;EACA;;AAEA;EACE;EACA,OAxCe;;AA2CjB;EACE;EACA,OA3CW;;AA6CX;EACE,OA7Ce",
+  "file": "app.css"
+}

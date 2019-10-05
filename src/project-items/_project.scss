@@ -1,0 +1,11 @@
+.project {
+  &__header {
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+
+    &__title {
+      padding-left: 8px;
+    }
+  }
+}

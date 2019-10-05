@@ -1,0 +1,53 @@
+$project-name-color: #2295f2;
+$notes-color: silver;
+$deadline-color: gray;
+$deadline-today-color: red;
+
+.todo-item {
+  display: flex;
+
+  &__checkbox {
+    padding-left: 5px;
+    margin: 5px 0 0 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__header {
+      font-size: 15px;
+      overflow: hidden;
+      height: 30px;
+    }
+
+    &__notes {
+      font-size: 13px;
+      color: $notes-color;
+      overflow: hidden;
+      height: 28px;
+    }
+  }
+
+  &__additional {
+    font-size: 15px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+
+    &__project {
+      padding-left: 15px;
+      color: $project-name-color;
+    }
+
+    &__deadline {
+      padding-left: 10px;
+      color: $deadline-color;
+
+      &__red {
+        color: $deadline-today-color;
+      }
+    }
+  }
+}
