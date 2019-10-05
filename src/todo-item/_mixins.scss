@@ -1,0 +1,11 @@
+@mixin item-content-section($font-size, $color: null, $height) {
+  font-size: $font-size;
+  color: $color;
+  height: $height;
+  overflow: hidden;
+}
+
+@mixin item-additional-section($padding-left, $color) {
+  padding-left: $padding-left;
+  color: $color;
+}

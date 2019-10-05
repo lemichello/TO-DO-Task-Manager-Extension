@@ -1,7 +1,5 @@
-$project-name-color: #2295f2;
-$notes-color: silver;
-$deadline-color: gray;
-$deadline-today-color: red;
+@import "variables";
+@import "mixins";
 
 .todo-item {
   display: flex;
@@ -17,16 +15,11 @@ $deadline-today-color: red;
     justify-content: center;
 
     &__header {
-      font-size: 15px;
-      overflow: hidden;
-      height: 30px;
+      @include item-content-section($font-size: 15px, $height: 30px);
     }
 
     &__notes {
-      font-size: 13px;
-      color: $notes-color;
-      overflow: hidden;
-      height: 28px;
+      @include item-content-section(15px, $notes-color, 30px);
     }
   }
 
@@ -37,13 +30,11 @@ $deadline-today-color: red;
     align-items: center;
 
     &__project {
-      padding-left: 15px;
-      color: $project-name-color;
+      @include item-additional-section(15px, $project-name-color);
     }
 
     &__deadline {
-      padding-left: 10px;
-      color: $deadline-color;
+      @include item-additional-section(10px, $deadline-color);
 
       &__red {
         color: $deadline-today-color;

@@ -2,16 +2,16 @@
     <md-checkbox class="todo-item__checkbox md-primary" ng-model="$ctrl.isChecked"
                  ng-click="$ctrl.checkedChanged($event)"
                  aria-label="Check task"></md-checkbox>
-    <div class="todo-item__content">
+    <section class="todo-item__content">
         <span ng-class="{'todo-item__content__header': true}">{{$ctrl.item.header}}</span>
         <span class="todo-item__content__notes" ng-if="$ctrl.item.notes !== ''">{{$ctrl.item.notes}}</span>
-    </div>
-    <div class="todo-item__additional">
+    </section>
+    <section class="todo-item__additional">
         <p class="todo-item__additional__project" ng-if="$ctrl.item.projectId !== null">
             {{$ctrl.item.projectName}}</p>
         <strong ng-class="{'todo-item__additional__deadline': true,
         'todo-item__additional__deadline__red': $ctrl.deadlineStr === 'today'}">
             {{$ctrl.deadlineStr}}
         </strong>
-    </div>
+    </section>
 </div>

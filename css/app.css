@@ -27,11 +27,9 @@ html, body {
     align-items: center;
     justify-content: center;
 }
-
 #login-state__logo {
     margin-top: 25px;
 }
-
 #login-state__logo > img {
     padding-top: 8px;
     padding-right: 5px;
@@ -49,7 +47,6 @@ html, body {
 .projects-sidenav {
     width: 220px;
 }
-
 .projects-sidenav__project-item span {
     font-size: 1.2em;
     padding-left: 10px;
@@ -65,7 +62,6 @@ html, body {
     display: flex;
     align-items: center;
 }
-
 .project__header__title {
     padding-left: 8px;
 }
@@ -73,48 +69,40 @@ html, body {
 .todo-item {
     display: flex;
 }
-
 .todo-item__checkbox {
     padding-left: 5px;
     margin: 5px 0 0 0;
 }
-
 .todo-item__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .todo-item__content__header {
     font-size: 15px;
-    overflow: hidden;
     height: 30px;
-}
-
-.todo-item__content__notes {
-    font-size: 13px;
-    color: silver;
     overflow: hidden;
-    height: 28px;
 }
-
+.todo-item__content__notes {
+    font-size: 15px;
+    color: silver;
+    height: 30px;
+    overflow: hidden;
+}
 .todo-item__additional {
     font-size: 15px;
     padding-top: 10px;
     display: flex;
     align-items: center;
 }
-
 .todo-item__additional__project {
     padding-left: 15px;
     color: #2295f2;
 }
-
 .todo-item__additional__deadline {
     padding-left: 10px;
     color: gray;
 }
-
 .todo-item__additional__deadline__red {
     color: red;
 }
