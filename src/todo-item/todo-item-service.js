@@ -48,7 +48,9 @@
             item.completeDate = `${todayDate.getUTCFullYear()}-${todayDate.getUTCMonth() + 1}-${day}T${todayDate.getUTCHours()}:${todayDate.getUTCMinutes()}:${todayDate.getUTCSeconds()}.${todayDate.getUTCMilliseconds()}`;
 
             updateItem(item).then(function (result) {
-                removeMethod({item: item});
+                if (result) {
+                    removeMethod({item: item});
+                }
             }).catch(function () {
                 return false;
             });
