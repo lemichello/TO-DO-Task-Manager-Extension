@@ -4,7 +4,7 @@
         <h1 class="project__header__title">{{ctrl.project.name}}</h1>
     </div>
     <md-list>
-        <md-list-item ng-repeat="todoItem in ctrl.items" ng-click="null">
+        <md-list-item ng-repeat="todoItem in ctrl.items" ng-click="ctrl.editItem(todoItem)">
             <todo-item item="todoItem" project-name="ctrl.project.name" on-remove="ctrl.removeItem(item)"></todo-item>
         </md-list-item>
     </md-list>

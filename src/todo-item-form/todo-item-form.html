@@ -34,7 +34,7 @@
                 <md-button class="edit-container__item-form__content__buttons__confirm-button md-raised md-primary"
                            ng-disabled="itemForm.$invalid" ng-click="ctrl.confirm()">Confirm
                 </md-button>
-                <md-button ng-if="ctrl.isNew" ng-click="ctrl.deleteItem()"
+                <md-button ng-if="!ctrl.isNew" ng-click="ctrl.deleteItem()"
                            class="edit-container__item-form__content__buttons__delete-button md-raised md-warn">
                     Delete
                 </md-button>

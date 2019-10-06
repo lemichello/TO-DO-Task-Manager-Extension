@@ -4,9 +4,9 @@
     angular.module('extension')
         .controller('ProjectItemsController', ProjectItemsController);
 
-    ProjectItemsController.$inject = ['projectItems'];
+    ProjectItemsController.$inject = ['projectItems', '$state'];
 
-    function ProjectItemsController(projectItems) {
+    function ProjectItemsController(projectItems, $state) {
         let ctrl = this;
 
         ctrl.project = projectItems.project;
@@ -16,6 +16,10 @@
             let itemIndex = ctrl.items.findIndex(i => i.id === item.id);
 
             ctrl.items.splice(itemIndex, 1);
+        };
+
+        ctrl.editItem = function (item) {
+            $state.go('main.item-form', {'item': item, 'isNew': false});
         };
     }
 })();

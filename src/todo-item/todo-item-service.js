@@ -81,6 +81,25 @@
             })
         };
 
+        service.deleteItem = function (item) {
+            return $http({
+                method: 'DELETE',
+                url: `${ApiBasePath}/todoitems/${item.id}`,
+                mode: 'cors',
+                withCredentials: true
+            }).then(function (response) {
+                if (response.data.statusCode !== 200) {
+                    alert('Not deleted');
+                    return false;
+                }
+
+                return true;
+            }).catch(function () {
+                alert('Server error');
+                return false;
+            })
+        };
+
         function updateItem(item) {
             return $http({
                 method: 'PUT',
