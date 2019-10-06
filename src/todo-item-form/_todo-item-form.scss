@@ -1,0 +1,27 @@
+@import "../scss/mixins";
+
+.edit-container {
+  @include flex-column;
+  align-content: center;
+
+  &__item-form {
+    font-size: 1.2em;
+
+    &__content {
+      margin: 10px 25px;
+      @include flex-column;
+
+      &__buttons {
+        display: flex;
+
+        &__confirm-button {
+          width: 150px;
+        }
+
+        &__delete-button {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

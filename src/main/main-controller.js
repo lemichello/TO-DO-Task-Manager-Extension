@@ -33,8 +33,6 @@
 
         projects = projects.concat(sharedProjects);
 
-        console.log(projects);
-
         ctrl.projects = projects;
     }
 })();

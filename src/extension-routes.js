@@ -37,6 +37,23 @@
                         return ProjectsService.getItemsForProject($stateParams.project);
                     }]
                 }
+            })
+            .state('main.item-form', {
+                url: '/main/todo-item/{item:json}/{isNew:bool}',
+                templateUrl: 'src/todo-item-form/todo-item-form.html',
+                controller: 'TodoItemFormController',
+                controllerAs: 'ctrl',
+                resolve: {
+                    todoItem: ['$stateParams', function ($stateParams) {
+                        return $stateParams.item;
+                    }],
+                    isNew: ['$stateParams', function ($stateParams) {
+                        return $stateParams.isNew;
+                    }],
+                    sharedProjects: ['ProjectsService', function (ProjectsService) {
+                        return ProjectsService.getSharedProjects();
+                    }]
+                }
             });
     }
 })();

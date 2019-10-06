@@ -1,3 +1,5 @@
+@import "../scss/mixins";
+
 .projects-sidenav {
   width: 220px;
 
@@ -8,7 +10,14 @@
 }
 
 .tasks-container {
+  @include flex-column;
+
   &__logout-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__add-item-button {
     display: flex;
     justify-content: flex-end;
   }

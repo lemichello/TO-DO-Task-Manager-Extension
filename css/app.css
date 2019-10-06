@@ -1,110 +1,141 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 650px;
-    height: 400px;
-    min-height: 400px;
+  margin: 0;
+  padding: 0;
+  width: 650px;
+  height: 400px;
+  min-height: 400px;
 }
 
 .loading-indicator {
-    display: block;
-    width: 70px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 40%;
-    z-index: 100;
+  display: block;
+  width: 70px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 40%;
+  z-index: 100;
 }
 
 #login-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #login-state__logo {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 #login-state__logo > img {
-    padding-top: 8px;
-    padding-right: 5px;
+  padding-top: 8px;
+  padding-right: 5px;
 }
 
 #login-form {
-    font-size: 1.2em;
-    width: 305px;
+  font-size: 1.3em;
+  width: 350px;
 }
 
 .input-container {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .projects-sidenav {
-    width: 220px;
+  width: 220px;
 }
 .projects-sidenav__project-item span {
-    font-size: 1.2em;
-    padding-left: 10px;
+  font-size: 1.2em;
+  padding-left: 10px;
 }
 
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+}
 .tasks-container__logout-button {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.tasks-container__add-item-button {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .project__header {
-    margin: 5px 10px;
-    display: flex;
-    align-items: center;
+  margin: 5px 10px;
+  display: flex;
+  align-items: center;
 }
 .project__header__title {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 
 .todo-item {
-    display: flex;
+  display: flex;
 }
 .todo-item__checkbox {
-    padding-left: 5px;
-    margin: 5px 0 0 0;
+  padding-left: 5px;
+  margin: 5px 0 0 0;
 }
 .todo-item__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .todo-item__content__header {
-    font-size: 15px;
-    height: 30px;
-    overflow: hidden;
+  font-size: 15px;
+  height: 30px;
+  overflow: hidden;
 }
 .todo-item__content__notes {
-    font-size: 15px;
-    color: silver;
-    height: 30px;
-    overflow: hidden;
+  font-size: 15px;
+  color: silver;
+  height: 30px;
+  overflow: hidden;
 }
 .todo-item__additional {
-    font-size: 15px;
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
+  font-size: 15px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
 }
 .todo-item__additional__project {
-    padding-left: 15px;
-    color: #2295f2;
+  padding-left: 15px;
+  color: #2295f2;
 }
 .todo-item__additional__deadline {
-    padding-left: 10px;
-    color: gray;
+  padding-left: 10px;
+  color: gray;
 }
 .todo-item__additional__deadline__red {
-    color: red;
+  color: red;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.edit-container__item-form {
+  font-size: 1.2em;
+}
+.edit-container__item-form__content {
+  margin: 10px 25px;
+  display: flex;
+  flex-direction: column;
+}
+.edit-container__item-form__content__buttons {
+  display: flex;
+}
+.edit-container__item-form__content__buttons__confirm-button {
+  width: 150px;
+}
+.edit-container__item-form__content__buttons__delete-button {
+  width: 150px;
 }
 
 /*# sourceMappingURL=app.css.map */

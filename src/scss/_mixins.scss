@@ -9,3 +9,8 @@
   padding-left: $padding-left;
   color: $color;
 }
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

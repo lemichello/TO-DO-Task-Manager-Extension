@@ -9,6 +9,11 @@
     function TodoItemService($mdDialog, $http, ApiBasePath) {
         let service = this;
 
+        service.getFormattedDate = function (date) {
+            let day = date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`;
+            return `${date.getFullYear()}-${date.getMonth() + 1}-${day}T00:00:00`;
+        };
+
         service.getDeadlineStr = function (item) {
             let todayDate = new Date().getTime();
             let itemDeadline = Date.parse(item.deadline);
@@ -56,6 +61,26 @@
             });
         };
 
+        service.addItem = function (item) {
+            return $http({
+                method: 'POST',
+                url: `${ApiBasePath}/todoitems`,
+                data: JSON.stringify(item),
+                mode: 'cors',
+                withCredentials: true
+            }).then(function (response) {
+                if (response.status !== 200) {
+                    alert('Not added');
+                    return false;
+                }
+
+                return true;
+            }).catch(function () {
+                alert('Server error');
+                return false;
+            })
+        };
+
         function updateItem(item) {
             return $http({
                 method: 'PUT',
@@ -71,6 +96,7 @@
 
                 return true;
             }).catch(function () {
+                alert('Server error');
                 return false;
             });
         }

@@ -27,5 +27,9 @@
             LoginDataService.logOut();
             $state.go('login');
         };
+
+        ctrl.addTask = function () {
+            $state.go('main.item-form', {'item': {header: "", notes: "", date: null, deadline: null, projectId: null}});
+        };
     }
 })();

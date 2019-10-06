@@ -10,10 +10,15 @@
             </md-list>
         </md-sidenav>
         <md-content flex class="tasks-container">
-            <div class="tasks-container__logout-button">
+            <section class="tasks-container__logout-button">
                 <md-button class="md-raised md-primary" ng-click="$ctrl.logOut()">Log out</md-button>
-            </div>
+            </section>
             <ui-view></ui-view>
+            <section class="tasks-container__add-item-button">
+                <md-button class="md-fab md-primary" aria-label="Add task" ng-click="$ctrl.addTask()">
+                    <md-icon md-svg-icon="images/plus-solid.svg"></md-icon>
+                </md-button>
+            </section>
         </md-content>
     </div>
 </div>

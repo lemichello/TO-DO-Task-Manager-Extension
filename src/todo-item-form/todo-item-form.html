@@ -1,0 +1,44 @@
+<section class="edit-container">
+    <form class="edit-container__item-form" name="itemForm">
+        <md-content class="edit-container__item-form__content">
+            <md-input-container class="input-container">
+                <label>Header</label>
+                <input required type="text" ng-model="ctrl.item.header" name="header">
+                <div ng-messages="itemForm.header.$error">
+                    <div ng-message="required">Header is required</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="input-container">
+                <label>Notes</label>
+                <input type="text" ng-model="ctrl.item.notes" name="notes">
+            </md-input-container>
+            <md-input-container class="input-container">
+                <label>Date</label>
+                <md-datepicker ng-model="ctrl.item.date" md-placeholder="Date"
+                               md-min-date="ctrl.minDate"></md-datepicker>
+            </md-input-container>
+            <md-input-container class="input-container">
+                <label>Deadline</label>
+                <md-datepicker ng-model="ctrl.item.deadline" md-placeholder="Deadline"
+                               md-min-date="ctrl.minDate"></md-datepicker>
+            </md-input-container>
+            <md-input-container class="input-container">
+                <label>Shared project</label>
+                <md-select ng-model="ctrl.selectedSharedProject">
+                    <md-option ng-repeat="project in ctrl.sharedProjects" ng-value="project.id">
+                        {{project.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <section class="edit-container__item-form__content__buttons">
+                <md-button class="edit-container__item-form__content__buttons__confirm-button md-raised md-primary"
+                           ng-disabled="itemForm.$invalid" ng-click="ctrl.confirm()">Confirm
+                </md-button>
+                <md-button ng-if="ctrl.isNew" ng-click="ctrl.deleteItem()"
+                           class="edit-container__item-form__content__buttons__delete-button md-raised md-warn">
+                    Delete
+                </md-button>
+            </section>
+        </md-content>
+    </form>
+</section>
