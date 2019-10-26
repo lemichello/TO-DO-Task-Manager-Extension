@@ -4,9 +4,9 @@
         angular.module('extension')
             .service('TodoItemService', TodoItemService);
 
-        TodoItemService.$inject = ['$mdDialog', '$http', 'ApiBasePath'];
+        TodoItemService.$inject = ['$mdDialog', '$http', 'ApiBasePath', 'LoginDataService'];
 
-        function TodoItemService($mdDialog, $http, ApiBasePath) {
+        function TodoItemService($mdDialog, $http, ApiBasePath, LoginDataService) {
             let service = this;
 
             service.getFormattedDate = function (date) {
@@ -46,11 +46,19 @@
                 });
             };
 
+            function convertToFullNumber(number) {
+                return number > 9 ? number : `0${number}`;
+            }
+
             service.checkItem = function (item, removeMethod) {
                 let todayDate = new Date();
-                let day = todayDate.getUTCDate() > 9 ? todayDate.getUTCDate() : `0${todayDate.getUTCDate()}`;
+                let day = convertToFullNumber(todayDate.getUTCDate());
+                let month = convertToFullNumber(todayDate.getUTCMonth() + 1);
+                let hours = convertToFullNumber(todayDate.getUTCHours());
+                let minutes = convertToFullNumber(todayDate.getUTCMinutes());
+                let seconds = convertToFullNumber(todayDate.getUTCSeconds());
 
-                item.completeDate = `${todayDate.getUTCFullYear()}-${todayDate.getUTCMonth() + 1}-${day}T${todayDate.getUTCHours()}:${todayDate.getUTCMinutes()}:${todayDate.getUTCSeconds()}.${todayDate.getUTCMilliseconds()}`;
+                item.completeDate = `${todayDate.getUTCFullYear()}-${month}-${day}T${hours}:${minutes}:${seconds}.${todayDate.getUTCMilliseconds()}`;
 
                 service.updateItem(item).then(function (result) {
                     if (result) {
@@ -62,12 +70,14 @@
             };
 
             service.addItem = function (item) {
+                let sendingItem = Object.assign({}, item);
+
+                sendingItem.credential = LoginDataService.getLoginHash();
+
                 return $http({
                     method: 'POST',
                     url: `${ApiBasePath}/todoitems`,
-                    data: JSON.stringify(item),
-                    mode: 'cors',
-                    withCredentials: true
+                    data: JSON.stringify(sendingItem)
                 }).then(function (response) {
                     if (response.status !== 200) {
                         alert('Not added');
@@ -82,11 +92,11 @@
             };
 
             service.deleteItem = function (item) {
+                console.log(item);
                 return $http({
-                    method: 'DELETE',
+                    method: 'POST',
                     url: `${ApiBasePath}/todoitems/${item.id}`,
-                    mode: 'cors',
-                    withCredentials: true
+                    data: JSON.stringify({credential: LoginDataService.getLoginHash()})
                 }).then(function (response) {
                     if (response.data.statusCode !== 200) {
                         alert('Not deleted');
@@ -101,12 +111,14 @@
             };
 
             service.updateItem = function (item) {
+                let sendingItem = Object.assign({}, item);
+
+                sendingItem.credential = LoginDataService.getLoginHash();
+
                 return $http({
                     method: 'PUT',
                     url: `${ApiBasePath}/todoitems`,
-                    data: JSON.stringify(item),
-                    mode: 'cors',
-                    withCredentials: true
+                    data: JSON.stringify(sendingItem)
                 }).then(function (response) {
                     if (response.data.statusCode !== 200) {
                         alert('Not modified');

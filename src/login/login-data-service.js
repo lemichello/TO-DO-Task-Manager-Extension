@@ -9,38 +9,32 @@
     function LoginDataService($http, ApiBasePath, $cookies) {
         let service = this;
 
+        let loginHash = '';
+
         service.checkLoginData = function (user) {
             return $http({
                 method: 'POST',
                 url: `${ApiBasePath}/login`,
-                data: JSON.stringify(user),
-                mode: 'cors',
-                withCredentials: true
+                data: JSON.stringify(user)
             }).then(function (response) {
                 if (response.data.statusCode === 404) {
                     alert("You entered incorrect login or password");
                     return false;
                 }
 
-                let expireDate = new Date();
-                expireDate.setDate(expireDate.getDate() + 4);
-
-                $cookies.put('taskManagerUserId', response.data, {'expires': expireDate});
-                
+                loginHash = response.data;
                 return true;
             }).catch(function () {
                 return false;
             });
         };
 
-        service.isCookieExists = function() {
-            let cookie = $cookies.get('taskManagerUserId');
-
-            return cookie !== undefined;
+        service.logOut = function () {
+            loginHash = '';
         };
 
-        service.logOut = function () {
-            $cookies.remove('taskManagerUserId');
-        }
+        service.getLoginHash = function () {
+            return loginHash;
+        };
     }
 })();
